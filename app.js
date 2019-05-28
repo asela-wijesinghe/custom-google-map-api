@@ -1,6 +1,7 @@
-import express from 'express';
-import db from './db/connection';
-import getAllLocations from './controller';
+const express = require('express')
+const db = require('./db/connection');
+const getAllLocations = require('./controller');
+
 var bodyParser = require("body-parser");
 
 // Set up the express app
@@ -10,9 +11,7 @@ app.get('/locations', (req, res) => {
 
   getAllLocations(result => {
     res.status(200).send(Object.values(result))
-
   });
-
 
 });
 
