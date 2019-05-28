@@ -20,6 +20,6 @@ const PORT = 8000;
 // db.connect();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.listen(PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`server running on port ${PORT}`)
 });
